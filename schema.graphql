@@ -1,0 +1,24 @@
+type Query {
+  info: String!
+  water(state: ID!): WaterInfo!
+}
+
+type WaterInfo {
+  all: String!,
+  value: String!,
+  sites: [Sites!]!,
+  counts: [Counts!]!,
+  closest(lat: String!, long: String!): String!
+}
+
+type Sites {
+  id: String!,
+  name: String!,
+  temp: String!,
+  type: String!,
+}
+
+type Counts {
+  count: String!,
+  label: String!
+}
